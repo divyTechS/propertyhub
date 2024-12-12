@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PropertyHub - List Property</title>
+    <style>
+        #list {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Main content styles */
+main {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+main h2 {
+    text-align: center;
+    margin-top: 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+form input, form textarea, form select {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+form button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    align-self: center;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+/* Footer styles */
+/* footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+} */
+    </style>
+</head>
+<body id="list">
+    <header>
+        <h1>PropertyHub</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="list.html">List Property</a></li>
+                <li><a href="properties.html">View Properties</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>List Your Property</h2>
+        <form id="propertyForm" action="../php/property_registered.php" method="post">
+            <label for="propertyID">Property ID:</label>
+            <input type="number" id="propertyID" name="propertyID" required>
+
+            <label for="title">Property Title:</label>
+            <input type="text" id="title" name="title" required>
+
+            <label for="price">Price:</label>
+            <input type="number" id="price" name="price" required>
+
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" required></textarea>
+
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location" required>
+            
+            <label for="ownerID">Owner ID:</label>
+            <input type="number" id="ownerID" name="ownerID" required>
+
+            <label for="listingDate">Listing Date</label>
+            <input type="date" id="listingDate" name="listingDate" required>
+
+            <label for="type">Type:</label>
+            <select id="type" name="type" required>
+                <option value="On Sale">For Sale</option>
+                <option value="To Let">For Rent</option>
+            </select>
+
+            <label for="imageURL">Image URL:</label>
+            <input type="text" id="imageURL" name="imageURL" required>
+
+            <button type="submit">Submit</button>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2023 PropertyHub. All rights reserved.</p>
+    </footer>
+</body>
+</html></select>
+

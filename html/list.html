@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Listing</title>
+    <link rel="stylesheet" href="../css/list.css">
+</head>
+<body>
+    <nav>
+        <img src="../images/logo.jpeg" alt="logo">
+        <ul>
+            <li><a href="../html/index.html">Home</a></li>
+            <li><a href="../php/properties.php">Properties</a></li>
+            <li><a href="../html/about_us.html">About</a></li>
+            <li><a href="../html/admin.html">Admin</a></li>
+        </ul>
+    </nav>
+    <header>
+        <h1>List Your Property</h1>
+    </header>
+    <main>
+        <form action="../php/list.php" method="POST" enctype="multipart/form-data">
+            <label for="ownerID">Owner ID:</label>
+            <input type="number" id="ownerID" name="ownerID" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="title">Property Title:</label>
+            <input type="text" id="title" name="title" required>
+
+            <label for="price">Price:</label>
+            <input type="number" id="price" name="price" required>
+
+            <label for="description">Property Description:</label>
+            <textarea id="description" name="description" required></textarea>
+
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location" required>
+
+            <label for="state">Property State:</label>
+            <select id="state" name="state" required>
+                <option value="to sell">Sale</option>
+                <option value="to let">To Let</option>
+            </select>
+
+            <label for="imageURL">Image:</label>
+            <input type="file" id="imageURL" name="imageURL" accept="image/*">
+
+            <button type="submit">Submit Property</button>
+        </form>
+    </main>
+</body>
+</html>

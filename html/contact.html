@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="../css/contact.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        /* Basic Styles for Social Media Cards */
+        .social-cards-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            padding: 40px;
+            margin-top: 30px;
+        }
+
+        .social-card {
+            width: 50px;
+            height: 50px;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            background: linear-gradient(135deg, #3b5998, #0077b5, #1da1f2, #ff0000);
+            background-size: 300% 300%;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 12px 18px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease-in-out;
+            overflow: hidden;
+        }
+
+        .social-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 16px 24px rgba(0, 0, 0, 0.2);
+            background-position: 100% 100%;
+        }
+
+        .social-card i {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+
+        .social-card a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 18px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        .social-card a:hover {
+            color: #f5a623;
+        }
+
+        /* Header Styling */
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        header h1 {
+            font-size: 36px;
+            font-weight: 700;
+            color: #e4dfdf;
+        }
+
+        header p {
+            font-size: 18px;
+            color: #fffefe;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="contact-page">
+        <nav>
+            <img src="../images/logo.jpeg" alt="logo">
+            <ul>
+                <li><a href="../html/index.html">Home</a></li>
+                <li><a href="../html/register.html">Register</a></li>
+                <li><a href="../html/login.html">Login</a></li>
+                <li><a href="../html/about_us.html">About</a></li>
+                <li><a href="../html/admin.html">Admin</a></li>
+            </ul>
+        </nav>
+
+        <!-- Header -->
+        <header>
+            <h1>Contact Us</h1>
+            <p>Connect with us on our social media platforms!</p>
+        </header>
+
+        <!-- Social Media Cards Section -->
+        <div class="social-cards-container">
+            <!-- LinkedIn Card -->
+            <div class="social-card">
+                <i class="fab fa-linkedin"></i>
+                <a href="https://www.linkedin.com" target="_blank">Follow us on LinkedIn</a>
+            </div>
+            <!-- Instagram Card -->
+            <div class="social-card">
+                <i class="fab fa-instagram"></i>
+                <a href="https://www.instagram.com" target="_blank">Follow us on Instagram</a>
+            </div>
+            <!-- X (formerly Twitter) Card -->
+            <div class="social-card">
+                <i class="fab fa-twitter"></i>
+                <a href="https://www.twitter.com" target="_blank">Follow us on X</a>
+            </div>
+            <!-- YouTube Card -->
+            <div class="social-card">
+                <i class="fab fa-youtube"></i>
+                <a href="https://www.youtube.com" target="_blank">Subscribe to us on YouTube</a>
+            </div>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="contact-info">
+            <h3>Contact Information</h3>
+            <p><i class="fas fa-map-marker-alt"></i> 52GG+H4G, Airport Rd, PDPM IIITDM Jabalpur Campus, Khamaria, Jabalpur, Madhya Pradesh 482005</p>
+            <p><i class="fas fa-phone"></i> +91 1234 5678</p>
+            <p><i class="fas fa-envelope"></i> contact@propertyhub.com</p>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="faq-section">
+            <h3>Frequently Asked Questions</h3>
+            <div class="faq-item">
+                <h4>What is the best way to contact us? <i class="fas fa-chevron-down"></i></h4>
+                <p>Fill out the contact form or email us directly at contact@propertyhub.com.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Where are we located? <i class="fas fa-chevron-down"></i></h4>
+                <p>Our office is located at 52GG+H4G, Airport Rd, PDPM IIITDM Jabalpur Campus, Khamaria, Jabalpur, Madhya Pradesh 482005.</p>
+            </div>
+        </div>
+
+        <!-- Map -->
+        <div class="map">
+            <h3>Find Us</h3>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29341.23429902997!2d80.01945599999999!3d23.182814549999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3981a94397365dd3%3A0x5f9aeb812c2678c9!2sIIITDM%20Jabalpur!5e0!3m2!1sen!2sin!4v1732992269191!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            
+        </div>
+    </div>
+</body>
+</html>

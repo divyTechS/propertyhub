@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+    <style>
+        /* Global Reset */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #6a11cb, #5589e3);
+            color: #f9f9f9;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding-top: 80px;
+        }
+
+        /* Header Styling */
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+        }
+
+        header h1 {
+            font-size: 3em;
+            font-weight: bold;
+            margin: 0;
+            text-transform: uppercase;
+            color: #ffffff;
+        }
+
+        /* Navigation Styling */
+        nav {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        nav img {
+            height: 40px;
+            margin-left: 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin-right: 20px;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #ffb3ff;
+        }
+
+        /* Main Container Styling */
+        main {
+            width: 90%;
+            max-width: 400px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            padding: 40px;
+            animation: slideIn 0.6s ease-out;
+            margin-top: 20px;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Registration Form Styling */
+        .registration-form {
+            text-align: center;
+        }
+
+        .registration-form label {
+            display: block;
+            text-align: left;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #ffffff;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .registration-form input,
+        .registration-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            background: rgba(255, 255, 255, 0.8);
+            color: #333;
+        }
+
+        .registration-form input:focus,
+        .registration-form textarea:focus {
+            border-color: #ffb3ff;
+            box-shadow: 0 0 10px rgba(255, 179, 255, 0.4);
+            outline: none;
+            background: rgba(255, 255, 255, 1);
+        }
+
+        .registration-form button {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 25px;
+            background: linear-gradient(90deg, #8e44ad, #6a11cb);
+            color: #fff;
+            font-size: 1.1em;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .registration-form button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .registration-form button:active {
+            transform: translateY(0);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Responsive Styling */
+        @media screen and (max-width: 400px) {
+            main {
+                padding: 20px;
+            }
+
+            header h1 {
+                font-size: 2em;
+            }
+
+            .registration-form input,
+            .registration-form textarea {
+                font-size: 0.9em;
+            }
+
+            .registration-form button {
+                padding: 12px;
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <img src="../images/logo.jpeg" alt="logo">
+        <ul>
+            <li><a href="../html/index.html">Home</a></li>
+            <li><a href="../html/login.html">Login</a></li>
+            <li><a href="../php/properties.php">Properties</a></li>
+            <li><a href="../html/about_us.html">About</a></li>
+            <li><a href="../html/admin.html">Admin</a></li>
+        </ul>
+    </nav>
+    <header>
+        <h1>Register</h1>
+    </header>
+    <main>
+        <form action="../php/register.php" method="POST" class="registration-form">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="text" id="phone" name="phone" required>
+
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" required></textarea>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="confirm_password">Confirm Password:</label>
+            <input type="password" id="confirm_password" name="confirm_password" required>
+
+            <button type="submit">Register</button>
+        </form>
+    </main>
+</body>
+</html>

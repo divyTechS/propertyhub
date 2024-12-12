@@ -1,0 +1,161 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #4a0dcb, #1854fc);
+    color: #f9f9f9;
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+/* Navbar Styling */
+nav {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.438);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: background 0.3s ease-in-out;
+}
+
+nav img {
+    height: 50px;
+    width: auto;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+nav ul li a:hover {
+    color: #6a11cb;
+    transform: scale(1.1);
+}
+
+/* Property Details Container */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Property Details Header */
+.property-details-container h2 {
+    font-size: 2.5rem;
+    color: #4a0dcb;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Property Information */
+.property-details-container p {
+    font-size: 1.2rem;
+    color: #555;
+    margin: 15px 0;
+}
+
+.property-details-container p strong {
+    color: #4a0dcb;
+}
+
+/* Property Image Styling */
+.property-details-container img {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 12px;
+    margin-top: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.property-details-container img:hover {
+    transform: scale(1.05);
+}
+
+/* Buttons */
+.property-details-container a, .property-details-container button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    text-transform: uppercase;
+    transition: transform 0.2s ease, box-shadow 0.3s ease, background 0.3s ease;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.property-details-container a:hover, .property-details-container button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(90deg, #2575fc, #6a11cb);
+}
+
+.property-details-container a:active, .property-details-container button:active {
+    transform: translateY(1px);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .property-details-container h2 {
+        font-size: 2rem;
+    }
+
+    .property-details-container p {
+        font-size: 1rem;
+    }
+
+    .property-details-container img {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    nav ul {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    nav ul li a {
+        font-size: 1.1rem;
+    }
+}

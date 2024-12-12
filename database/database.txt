@@ -1,0 +1,70 @@
+CREATE DATABASE PropertyHub;
+
+CREATE TABLE admin(
+    adminKey VARCHAR(10),
+    password VARCHAR(10),
+    PRIMARY KEY(adminKey)
+);
+
+CREATE TABLE user(
+    userID INT,
+    name VARCHAR(10),
+    phone VARCHAR(10),
+    email VARCHAR(10),
+    password VARCHAR(10),
+    regDate DATE,
+    address VARCHAR(10),
+    PRIMARY KEY(userID)
+);
+
+CREATE TABLE property(
+    propertyID INT,
+    title VARCHAR(20),
+    price DECIMAL,
+    description text,
+    location VARCHAR(20),
+    ownerID INT,
+    listingDate DATE,
+    state VARCHAR(10),
+    imageURL VARCHAR(255),
+    altText VARCHAR(100),
+    PRIMARY KEY(propertyID),
+    FOREIGN KEY(ownerID) REFERENCES user(userID)
+);
+
+CREATE TABLE Tenancies (
+    tenancyID INT PRIMARY KEY AUTO_INCREMENT,
+    propertyID INT,
+    tenantID INT,
+    landlordID INT,
+    startDate DATE,
+    endDate DATE,
+    rentAmount DECIMAL(10, 2),
+    FOREIGN KEY (propertyID) REFERENCES property(propertyID),
+    FOREIGN KEY (tenantID) REFERENCES user(userID),
+    FOREIGN KEY (landlordID) REFERENCES user(userID)
+);
+
+CREATE TABLE salesTransactions (
+    transactionID INT PRIMARY KEY AUTO_INCREMENT,
+    propertyID INT,
+    buyerID INT,
+    sellerID INT,
+    transactionDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    amount DECIMAL(10, 2),
+    FOREIGN KEY (propertyID) REFERENCES property(propertyID),
+    FOREIGN KEY (buyerID) REFERENCES user(userID),
+    FOREIGN KEY (sellerID) REFERENCES user(userID)
+);
+
+CREATE TABLE rentalTransactions (
+    transactionID INT PRIMARY KEY AUTO_INCREMENT,
+    propertyID INT,
+    tenantID INT,
+    landlordID INT,
+    transactionDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    amount DECIMAL(10, 2),
+    FOREIGN KEY (propertyID) REFERENCES property(propertyID),
+    FOREIGN KEY (tenantID) REFERENCES user(userID),
+    FOREIGN KEY (landlordID) REFERENCES user(userID)
+);

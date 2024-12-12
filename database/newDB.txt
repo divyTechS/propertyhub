@@ -1,0 +1,73 @@
+-- Admin Table
+CREATE TABLE admin (
+    adminID INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL  -- Store hashed passwords
+);
+
+-- User Table
+CREATE TABLE user (
+    userID INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    phone VARCHAR(15),
+    email VARCHAR(255) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    regDate DATE DEFAULT CURRENT_DATE,
+    address VARCHAR(255),
+    UNIQUE(email)
+);
+
+-- Property Table
+CREATE TABLE property (
+    propertyID INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    price DECIMAL(15, 2) NOT NULL,
+    description TEXT,
+    location VARCHAR(255) NOT NULL,
+    ownerID INT NOT NULL,
+    listingDate DATE DEFAULT CURRENT_DATE,
+    state ENUM('available', 'sold', 'rented', 'to sale', 'to let') DEFAULT 'available',
+    imageURL VARCHAR(255),
+    altText VARCHAR(255),
+    FOREIGN KEY(ownerID) REFERENCES user(userID)
+);
+
+-- Tenancies Table
+CREATE TABLE Tenancies (
+    tenancyID INT AUTO_INCREMENT PRIMARY KEY,
+    propertyID INT NOT NULL,
+    tenantID INT NOT NULL,
+    landlordID INT NOT NULL,
+    startDate DATE NOT NULL,
+    endDate DATE NOT NULL,
+    rentAmount DECIMAL(10, 2) NOT NULL,
+    FOREIGN KEY(propertyID) REFERENCES property(propertyID),
+    FOREIGN KEY(tenantID) REFERENCES user(userID),
+    FOREIGN KEY(landlordID) REFERENCES user(userID)
+);
+
+-- Sales Transactions Table
+CREATE TABLE salesTransactions (
+    transactionID INT AUTO_INCREMENT PRIMARY KEY,
+    propertyID INT NOT NULL,
+    buyerID INT NOT NULL,
+    sellerID INT NOT NULL,
+    transactionDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    amount DECIMAL(15, 2) NOT NULL,
+    FOREIGN KEY(propertyID) REFERENCES property(propertyID),
+    FOREIGN KEY(buyerID) REFERENCES user(userID),
+    FOREIGN KEY(sellerID) REFERENCES user(userID)
+);
+
+-- Rental Transactions Table
+CREATE TABLE rentalTransactions (
+    transactionID INT AUTO_INCREMENT PRIMARY KEY,
+    propertyID INT NOT NULL,
+    tenantID INT NOT NULL,
+    landlordID INT NOT NULL,
+    transactionDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    amount DECIMAL(15, 2) NOT NULL,
+    FOREIGN KEY(propertyID) REFERENCES property(propertyID),
+    FOREIGN KEY(tenantID) REFERENCES user(userID),
+    FOREIGN KEY(landlordID) REFERENCES user(userID)
+);

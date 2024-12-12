@@ -1,0 +1,218 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #4a0dcb, #1854fc);
+    color: #f9f9f9;
+    min-height: 100vh;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Header Styling */
+header {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: background 0.3s ease-in-out;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #4a0dcb;
+    letter-spacing: 2px;
+    margin-right: 20px;
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+}
+
+header nav img {
+    width: 60px;
+    margin-right: 20px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+nav ul li a:hover {
+    color: #6a11cb;
+    transform: scale(1.1);
+}
+
+/* Main Section */
+main {
+    width: 90%;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+main h2 {
+    font-size: 2.5rem;
+    color: #4a0dcb;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Property Details */
+.property-details {
+    text-align: left;
+    margin: 20px 0;
+}
+
+.property-details img {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.property-details img:hover {
+    transform: scale(1.05);
+}
+
+.property-details h3 {
+    font-size: 2rem;
+    color: #4a0dcb;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.property-details p {
+    font-size: 1.1rem;
+    color: #555;
+    margin: 10px 0;
+}
+
+/* Payment Section */
+form {
+    margin-top: 30px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    color: #4a0dcb;
+}
+
+form input[type="number"], 
+form input[type="text"], 
+form input[type="password"] {
+    padding: 10px;
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 20px;
+    border: 2px solid #4a0dcb;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: #f9f9f9;
+}
+
+form button {
+    padding: 12px 25px;
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    color: #fff;
+    font-weight: bold;
+    border-radius: 8px;
+    text-transform: uppercase;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    width: 100%;
+    max-width: 200px;
+    margin-top: 15px;
+}
+
+form button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+form button:active {
+    transform: translateY(1px);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #f9f9f9;
+    padding: 20px;
+    width: 100%;
+    bottom: 0;
+    position: relative;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    main {
+        padding: 20px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header nav img {
+        width: 40px;
+    }
+
+    .property-details img {
+        max-width: 100%;
+    }
+
+    .property-details h3 {
+        font-size: 1.5rem;
+    }
+
+    .property-details p {
+        font-size: 1rem;
+    }
+
+    form {
+        margin-top: 20px;
+        padding: 15px;
+    }
+
+    form input[type="number"], 
+    form input[type="text"], 
+    form input[type="password"] {
+        width: 100%;
+    }
+}
